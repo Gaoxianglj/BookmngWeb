@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <trees>
+     <tree path="/src/app/app-routing.module.ts" title="url注册及跳转" extension="ts"/>
+   <tree path="/src/app/book-edit" title="图书编辑"/>
+   <tree path="/src/app/book-manage" title="图书管理"/>
+   <tree path="/src/app/borrow" title="图书租借"/>
+   <tree path="/src/app/login" title="登录"/>
+   <tree path="/DirectoryV2.xml" title="中文备注管理用" extension="xml"/>
+   <tree path="/package.json" title="包管理" extension="json"/>
+     <tree path="/src/app/book-back" title="图书归还"/>
+   <tree path="/src/app/add-modal" title="添加图书模态框"/>
+   <tree path="/src/app/the-log" title="日志"/>
+   <tree path="/src/app/ranking-list" title="排行榜"/>
+    <tree path="/src/app/user-message" title="用户页面的查询"/>
+    <tree path="/src/app/edit-user" title="用户编辑"/>
+  <tree path="/src/app/register" title="注册"/>
+    <tree path="/src/app/details" title="管理员"/>
+  <tree path="/src/app/ranking-list-user" title="排行榜（用户端）"/>
+  <tree path="/src/app/user-select" title="图书查询（用户）"/>
+</trees>

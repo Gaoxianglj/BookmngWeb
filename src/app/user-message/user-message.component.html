@@ -1,0 +1,49 @@
+<div class="container">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link " routerLink="../userSelect">查询</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="../userMessage">个人信息</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="../userRankingList">排行榜</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <tr class="tr">
+    <td>用户名:</td>
+    <td>{{user.userName}}</td>
+
+  </tr>
+  <tr>
+  <td>电子邮件:</td>
+  <td>{{user.email}}</td>
+</tr>
+  <tr>
+    <td>生 日:</td>
+    <td>{{user.birthday}}</td>
+  </tr>
+  <tr>
+    <td>性 别:</td>
+    <td>{{user.gender}}</td>
+  </tr>
+  <tr>
+    <td>年 级:</td>
+    <td>{{user.grade}}</td>
+  </tr>
+  <tr>
+    <td>兴 趣:</td>
+    <td>{{user.interest}}</td>
+  </tr>
+  <tr>
+    <td>自我介绍:</td>
+    <td>{{user.introduction}}</td>
+  </tr>
+  <td><button (click)="useredit(user)">编辑</button></td>
+</div>
+

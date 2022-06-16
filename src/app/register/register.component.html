@@ -1,0 +1,172 @@
+<body>
+<div class="alert alert-danger" *ngIf="errorMessage != 'null'">
+  {{ errorMessage }}
+</div>
+<div class="form-signin container img">
+  <div class="row mb-4">
+    <div class="col-md-12 h3 text-center">注册</div>
+  </div>
+  <div class="row mb-2">
+    <label for="userName" class="col-md-3 px-md-0 col-form-label"
+    >用户名：</label>
+    <div class="col-md-9 px-md-0">
+      <input
+        type="text"
+        id="userName"
+        class="form-control"
+        [(ngModel)]="userName"
+        required
+        autofocus
+      />
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label for="userName" class="col-md-3 px-md-0 col-form-label"
+    >密 码：</label>
+    <div class="col-md-9 px-md-0">
+
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        value="{{password}}"
+        [(ngModel)]="password"
+        required
+        autofocus
+      /><h5 *ngIf="passwordError" class="aerror">密码须包含字母与数字且长度大于等于8小于等于20</h5>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label for="password2" class="col-md-3 px-md-0 col-form-label"
+    >确认密码：</label>
+    <div class="col-md-9 px-md-0">
+      <input
+        type="password"
+        id="password2"
+        class="form-control"
+        [(ngModel)]="password2"
+        required
+      /><h5 *ngIf="passwordError2" class="aerror">两遍输入密码不一致</h5>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label for="email" class="col-md-3 px-md-0 col-form-label"
+    >电子邮件：</label>
+    <div class="col-md-9 px-md-0">
+      <input
+        type="text"
+        id="email"
+        class="form-control"
+        [(ngModel)]="email"
+        required
+        autofocus
+      />
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label for="birthday" class="col-md-3 px-md-0 col-form-label"
+    >生 日：</label>
+    <div class="col-md-9 px-md-0">
+      <input
+        type="date"
+        id="birthday"
+        class="form-control"
+        [(ngModel)]="birthday"
+        required
+        autofocus
+      />
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label  class="col-md-3 px-md-0 col-form-label"
+    >性 别：</label>
+    <div class="col-md-9 px-md-0">
+      &nbsp;
+      <input id="gender1"
+             name="sex"
+             value="男"
+             [(ngModel)]="gender"
+             type="radio"
+
+             required>男
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input id="gender2"
+             name="sex"
+             value="女"
+             [(ngModel)]="gender"
+             type="radio"
+             required>女
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label for="grade" class="col-md-3 px-md-0 col-form-label"
+    >年 级：</label>
+    <div class="col-md-9 px-md-0">
+      <select
+        type="text"
+        id="grade"
+        class="form-control"
+        [(ngModel)]="grade"
+        required
+        autofocus
+      >
+        <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label class="col-md-3 px-md-0 col-form-label"
+    >兴 趣：</label>
+
+    <div class="col-md-9 px-md-0" >
+      <span *ngFor="let item of interestRef">
+      <input
+        type="checkbox"
+        id="interest1"
+        [(ngModel)]="item.checked"
+        #interestRef
+        required
+        autofocus
+      >{{item.title}}
+      &nbsp;&nbsp;
+</span>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label for="introduction" class="col-md-3 px-md-0 col-form-label"
+    >自我介绍：</label>
+    <div class="col-md-9 px-md-0">
+      <textarea
+        id="introduction"
+        class="form-control"
+        [(ngModel)]="introduction"
+        required
+        autofocus
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-5 offset-md-1 text-center">
+
+
+      <button
+        [disabled]="!buttondis"
+        class="btn btn-primary "
+        style="width:150px;margin-left: 80px"
+   (click)="reg()"
+      >
+        保存
+      </button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+

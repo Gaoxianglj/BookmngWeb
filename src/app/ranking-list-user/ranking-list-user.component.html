@@ -1,0 +1,68 @@
+<div class="container">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link " routerLink="../userSelect">查询</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " routerLink="../userMessage">个人信息</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="../userRankingList">排行榜</a>
+      </li>
+
+    </ul>
+  </nav>
+  <tr>
+    <td>
+      <table class="table table-striped table-hover mt-4">
+
+        <thead>
+        <a>当月热门图书</a>
+        <!--  <tr *ngIf="">-->
+        <tr>
+          <th class="text-center">书名</th>
+          <th class="text-center">作者</th>
+          <th class="text-center">借阅次数</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="ranking.bookList!=null">
+        <tr *ngFor="let book of ranking.bookList">
+          <td class="text-center">
+            {{ book.bookName }}
+          </td>
+          <td class="text-center">
+            {{ book.authorName }}
+          </td>
+          <td class="text-center">
+            {{ book.borrowCount }}
+          </td>
+        </tr>
+        </tbody>
+      </table></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td > <table class="table table-striped table-hover mt-4">
+      <thead>
+      <a>当月读者排行榜</a>
+      <!--  <tr *ngIf="">-->
+      <tr>
+        <th class="text-center">读者</th>
+        <th class="text-center">借阅次数</th>
+
+      </tr>
+      </thead>
+      <tbody *ngIf="ranking.userList!=null">
+      <tr *ngFor="let user of ranking.userList">
+        <td class="text-center">
+          {{ user.userName }}
+        </td>
+        <td class="text-center">
+          {{ user.borrowCount}}
+        </td>
+      </tr>
+      </tbody>
+    </table></td>
+  </tr>
+</div>
+

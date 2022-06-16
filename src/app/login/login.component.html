@@ -1,0 +1,52 @@
+<body>
+
+<div class="alert alert-danger" *ngIf="errorMessage != null">
+  {{ errorMessage }}
+</div>
+<div class="form-signin container">
+  <div class="row mb-4">
+    <div class="col-md-12 h3 text-center">请登录</div>
+  </div>
+  <div class="row mb-2">
+    <label for="userName" class="col-md-3 px-md-0 col-form-label"
+      >用户名：</label>
+    <div class="col-md-9 px-md-0">
+      <input
+        type="text"
+        id="userName"
+        class="form-control"
+        #userNameRef
+        required
+        autofocus
+      />
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label for="password" class="col-md-3 px-md-0 col-form-label"
+      >密 码：</label>
+    <div class="col-md-9 px-md-0">
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        #passwordRef
+        required
+      />
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-5 offset-md-1 text-center">
+      <button
+        class="btn btn-primary pl-4 pr-4"
+        (click)="submit(userNameRef.value, passwordRef.value)"
+      >
+        登录
+      </button>
+    </div>
+    <div class="col-md-5 text-center">
+      <button class="btn btn-primary pl-4 pr-4" (click)="reg()">注册</button>
+    </div>
+  </div>
+</div>
+
+</body>

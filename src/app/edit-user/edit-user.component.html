@@ -1,0 +1,163 @@
+<div class="modal-dialog modal-primary" role="document" style="border: none">
+  <div class="modal-content" style="border: none">
+    <div class="modal-header" style="border: none">
+      <button type="button" class="close" (click)="close()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <table class="search-table mt-4">
+      <colgroup>
+        <col width="70px" />
+        <col width="260px" />
+        <col width="70px" />
+        <col width="260px" />
+      </colgroup>
+
+      <td>用户名</td>
+      <td>
+        <input
+          type="text"
+          id="userName"
+          class="form-control"
+          [(ngModel)]="userName"
+          required
+          autofocus
+        />
+      </td>
+      <tr>
+        <td>新密码</td>
+        <td>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            value="{{password}}"
+            [(ngModel)]="password"
+            required
+            autofocus
+          /><h5 *ngIf="passwordError" class="aerror">密码须包含字母与数字且长度大于等于8小于等于20</h5>
+        </td>
+      </tr>
+      <tr>
+        <td>密码确认</td>
+        <td>
+          <input
+            type="password"
+            id="password2"
+            class="form-control"
+            [(ngModel)]="password2"
+            required
+          /><h5 *ngIf="passwordError2" class="aerror">两遍输入密码不一致</h5>
+        </td>
+      </tr>
+      <tr>
+        <td>电子邮件</td>
+        <td>
+          <input
+            type="text"
+            id="email"
+            class="form-control"
+            [(ngModel)]="email"
+            required
+            autofocus
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>生日</td>
+        <td>
+          <input
+            type="date"
+            id="birthday"
+            class="form-control"
+            [(ngModel)]="birthday"
+            required
+            autofocus
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>性别</td>
+        <td>
+          &nbsp;
+          <input id="gender1"
+                 name="sex"
+                 value="男"
+                 [(ngModel)]="gender"
+                 type="radio"
+
+                 required>男
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input id="gender2"
+                 name="sex"
+                 value="女"
+                 [(ngModel)]="gender"
+                 type="radio"
+                 required>女
+        </td>
+      </tr>
+      <tr>
+        <td>年级</td>
+        <td>
+          <select
+            type="text"
+            id="grade"
+            class="form-control"
+            [(ngModel)]="grade"
+            required
+            autofocus
+          >
+            <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>兴趣</td>
+        <td>
+<span *ngFor="let item of interestRef">
+      <input
+        type="checkbox"
+        id="interest1"
+        [(ngModel)]="item.checked"
+        #interestRef
+        required
+        autofocus
+      >{{item.title}}
+  &nbsp;&nbsp;
+</span>
+        </td>
+      </tr>
+      <tr>
+        <td>自我介绍</td>
+        <td>
+<textarea
+  id="introduction"
+  class="form-control"
+  [(ngModel)]="introduction"
+  required
+  autofocus
+></textarea>
+        </td>
+      </tr>
+    </table>
+    <div class="alert alert-danger mt-2" *ngIf="errorMessage != null">
+      {{ errorMessage }}
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary btn-sm pl-3 pr-3" (click)="onUserSave()">
+        保存
+      </button>
+      <button type="button" class="btn btn-danger btn-sm ml-4 pl-3 pr-3"
+              (click)="close()">
+        取消
+      </button>
+    </div>
+
+
+  </div>
+</div>

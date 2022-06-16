@@ -1,0 +1,80 @@
+<div class="alert alert-danger" *ngIf="infoMessage != null">
+  {{ infoMessage }}
+</div>
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link " routerLink="../borrow">查询借阅</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="../bookBack">归还</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="../bookManage">图书管理</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="../TheLog">日志</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="../RankingList">排行榜</a>
+    </li>
+  </ul>
+</nav>
+
+  <table class="search-table mt-4">
+    <colgroup>
+      <col width="70px" />
+      <col width="260px" />
+      <col width="70px" />
+      <col width="260px" />
+    </colgroup>
+    <tr>
+      <td>用户ID</td>
+      <td class="pr-5">
+        <input type="text" class="form-control" [(ngModel)]="userId"  value="{{userId}}"  id="userId" />
+      </td>
+    </tr>
+
+  </table>
+  <tr>
+    <td colspan="4" class="pt-3 text-center">
+      <button class="btn btn-primary pl-5 pr-5"
+              (click)="UserBorrowHistory()"
+          >
+        查询为归还图书
+      </button>
+    </td>
+  </tr>
+  <table class="table table-striped table-hover mt-4">
+    <thead>
+    <tr *ngIf="UserBorrowHistoryList.length > 0">
+      <th class="text-center">图书ID</th>
+      <th class="text-center">书名</th>
+      <th class="text-center">借阅日期</th>
+      <th class="text-center">操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let UserBorrowHistory of UserBorrowHistoryList">
+      <input type="hidden" #bookIdHiddenRef value="{{ UserBorrowHistory.bookId }}" />
+      <td class="text-center">
+        {{ UserBorrowHistory.bookId }}
+      </td>
+      <td class="text-center">
+        {{ UserBorrowHistory.bookName }}
+      </td>
+      <td class="text-center">
+        {{ UserBorrowHistory.BorrowDate}}
+      </td>
+      <td class="table-btn-td text-center">
+        <button class="btn btn-primary pl-5 pr-5"
+                (click)="BookReturn(userId,UserBorrowHistory.bookId)"
+        >
+          归还
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

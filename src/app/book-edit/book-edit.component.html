@@ -1,0 +1,148 @@
+<!--<div class="modal-dialog modal-primary" role="document" style="border: none">-->
+<!--<div class="modal-content">-->
+<!--  <div class="modal-header">-->
+<!--    <h4 class="modal-title pull-left">图书信息编辑</h4>-->
+<!--    <button type="button" class="close pull-right" aria-label="Close" (click)="close()">-->
+<!--      <span aria-hidden="true">&times;</span>-->
+<!--    </button>-->
+<!--  </div>-->
+<!--  <div class="modal-body">-->
+<!--    <table>-->
+<!--      <colgroup>-->
+<!--        <col width="70px" />-->
+<!--        <col width="260px" />-->
+<!--      </colgroup>-->
+<!--      <tr [ngClass]="{ 'd-none': !bookModal.bookId }">-->
+<!--        <td>图书ID</td>-->
+<!--        <td>-->
+<!--          <input type="text" class="form-control" #bookIdModelSearchRef id="bookIdModelSearch"-->
+<!--            value="{{ bookModal.bookId }}" disabled />-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>作者</td>-->
+<!--        <td>-->
+<!--          <input type="text" class="form-control" #authorNameModelSearchRef id="authorNameModelSearch"-->
+<!--            value="{{ bookModal.authorName }}" />-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>书名</td>-->
+<!--        <td>-->
+<!--          <input type="text" class="form-control" #bookNameModelSearchRef id="bookNameModelSearch"-->
+<!--            value="{{ bookModal.bookName }}" />-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>出版社</td>-->
+<!--        <td>-->
+<!--          <input type="text" class="form-control" #publisherNameModelSearchRef id="publisherNameModelSearch"-->
+<!--            value="{{ bookModal.publisherName }}" />-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>库存</td>-->
+<!--        <td>-->
+<!--          <input type="text" class="form-control" #quantityModelSearchRef id="quantityModelSearch"-->
+<!--            value="{{ bookModal.quantity }}" maxlength="9" />-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--    </table>-->
+<!--    <div class="alert alert-danger mt-2" *ngIf="errorMessage != null">-->
+<!--      {{ errorMessage }}-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="modal-footer">-->
+<!--    <button type="button" class="btn btn-primary btn-sm pl-3 pr-3" (click)="-->
+<!--        onBookSave(-->
+<!--          bookIdModelSearchRef.value,-->
+<!--          authorNameModelSearchRef.value,-->
+<!--          bookNameModelSearchRef.value,-->
+<!--          publisherNameModelSearchRef.value,-->
+<!--          quantityModelSearchRef.value-->
+<!--        )-->
+<!--      ">-->
+<!--      保存-->
+<!--    </button>-->
+<!--    <button type="button" class="btn btn-danger btn-sm ml-4 pl-3 pr-3"-->
+<!--      (click)="onBookDelete(bookIdModelSearchRef.value)" *ngIf="!!bookModal.bookId">-->
+<!--      删除-->
+<!--    </button>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</div>-->
+<div class="modal-dialog modal-primary" role="document" style="border: none">
+  <div class="modal-content" style="border: none">
+    <div class="modal-header" style="border: none">
+      <button type="button" class="close" (click)="close()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <table class="search-table mt-4">
+      <colgroup>
+        <col width="70px" />
+        <col width="260px" />
+        <col width="70px" />
+        <col width="260px" />
+      </colgroup>
+
+              <td>图书ID</td>
+              <td>
+                <input type="text" class="form-control" #bookIdModelSearchRef id="bookIdModelSearch"
+                  value="{{ bookModal.bookId }}" disabled />
+              </td>
+            <tr>
+              <td>作者</td>
+              <td>
+                <input type="text" class="form-control" #authorNameModelSearchRef id="authorNameModelSearch"
+                  value="{{ bookModal.authorName }}" />
+              </td>
+            </tr>
+            <tr>
+              <td>书名</td>
+              <td>
+                <input type="text" class="form-control" #bookNameModelSearchRef id="bookNameModelSearch"
+                  value="{{ bookModal.bookName }}" />
+              </td>
+            </tr>
+            <tr>
+              <td>出版社</td>
+              <td>
+                <input type="text" class="form-control" #publisherNameModelSearchRef id="publisherNameModelSearch"
+                  value="{{ bookModal.publisherName }}" />
+              </td>
+            </tr>
+            <tr>
+              <td>库存</td>
+              <td>
+                <input type="text" class="form-control" #quantityModelSearchRef id="quantityModelSearch"
+                  value="{{ bookModal.quantity }}" maxlength="9" />
+              </td>
+            </tr>
+          </table>
+          <div class="alert alert-danger mt-2" *ngIf="errorMessage != null">
+            {{ errorMessage }}
+          </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-sm pl-3 pr-3" (click)="
+              onBookSave(
+                bookIdModelSearchRef.value,
+                authorNameModelSearchRef.value,
+                bookNameModelSearchRef.value,
+                publisherNameModelSearchRef.value,
+                quantityModelSearchRef.value
+              )
+            ">
+            保存
+          </button>
+          <button type="button" class="btn btn-danger btn-sm ml-4 pl-3 pr-3"
+            (click)="onBookDelete(bookIdModelSearchRef.value)" *ngIf="!!bookModal.bookId">
+            删除
+          </button>
+        </div>
+
+
+  </div>
+</div>
+
