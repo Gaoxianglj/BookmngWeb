@@ -12,6 +12,7 @@ import {Sleep} from "../register/sleep";
   styleUrls: ['./add-modal.component.css']
 })
 export class AddModalComponent implements OnInit {
+  errorMessage = 'null';
   onClose: any;
   constructor(public bsModalRef: BsModalRef,private service:DetailsService,private router: Router) { }
 
@@ -35,6 +36,7 @@ export class AddModalComponent implements OnInit {
           bookName: string,
           publisherName: string,
           quantity: string){
+    this.errorMessage="null";
     this.service
       .addBook(authorName,bookName,publisherName,Number(quantity))
       .subscribe((result) => {
@@ -43,6 +45,8 @@ export class AddModalComponent implements OnInit {
           console.log("成功了")
           Sleep(3000)
           location.reload();
+        }else {
+          this.errorMessage=result.errors[0].message || '添加失败';
         }
       });
 

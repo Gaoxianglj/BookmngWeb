@@ -51,6 +51,7 @@ export class BookBackComponent implements OnInit {
       .subscribe((result) => {
         if (result.status === HttpResultStatus.SUCCESS) {
           this.UserBorrowHistoryList=result.result
+          console.log(this.UserBorrowHistoryList[0].borrowDate+"借阅日期")
         }
       })
   }

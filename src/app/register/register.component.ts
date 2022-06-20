@@ -58,12 +58,19 @@ export class RegisterComponent implements DoCheck {
         interst=interst+item.title+","
       }
     }
+    if(this.gender==="男"){
+      this.gender="0"
+    }else {
+      this.gender="1"
+    }
     this.service.reg(this.userName, this.password, this.password2, this.email, this.birthday, Number(this.gender), Number(this.grade), interst, this.introduction).subscribe((result: HttpResult) => {
       if (result.status === HttpResultStatus.SUCCESS) {
         console.log("进来了"+result.errors)
-        this.errorMessage="注册成功,3s后自动登录"
+        this.errorMessage="注册成功"
          Sleep(3000)
         this.submit(this.userName,this.password);
+      }else {
+        this.errorMessage=result.errors[0].message
       }
 
     });
@@ -81,7 +88,6 @@ export class RegisterComponent implements DoCheck {
       //前台显示密码不符合
     }else{
       this.passwordError=false;
-      console.log("wasd")
     }
     //判断两遍密码是否相同
     if(this.password2!=this.password&& this.password2!=''){

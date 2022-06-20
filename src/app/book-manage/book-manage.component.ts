@@ -25,7 +25,7 @@ export class BookManageComponent implements OnInit{
   public userId:number=Number(localStorage.getItem('userId'));
   public bookList: Book[] = [];
   public editBook!:Book;
-  public errorMessage!: string;
+  public errorMessage='null';
   public infoMessage!: string;
   private bsModalRef: BsModalRef | undefined;
 
@@ -54,11 +54,7 @@ export class BookManageComponent implements OnInit{
       .subscribe((result) => {
         console.log(result.status);
         if (result.status === HttpResultStatus.SUCCESS) {
-          console.log("进来了")
           this.bookList = result.result;
-          console.log(this.bookList[0].bookName+"书名"+this.bookList.length)
-          console.log(result.result+"aaaaa");
-          console.log(this.bookList+"bbbbb");
           if (this.bookList.length === 0) {
             this.errorMessage = '没有検索結果';
             return;

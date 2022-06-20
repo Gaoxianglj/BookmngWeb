@@ -13,7 +13,7 @@ import { User } from './user.model';
 })
 export class LoginComponent {
 
-  public errorMessage: string | undefined;
+  public errorMessage='null';
 
   constructor(private service: LoginService, private router: Router) {}
 

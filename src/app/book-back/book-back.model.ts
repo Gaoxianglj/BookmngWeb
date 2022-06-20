@@ -4,5 +4,6 @@ export interface UserBorrow{
   //书名
   bookName:string
   //借阅日期
-  BorrowDate:Date
+  borrowDate:string
 }
+

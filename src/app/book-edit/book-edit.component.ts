@@ -13,7 +13,7 @@ import {BsModalRef} from "ngx-bootstrap/modal";
 export class BookEditComponent implements OnInit
  {
   public bookModal!: Book;
-  public errorMessage!: string;
+  public errorMessage="null";
 
   constructor(private service: DetailsService,bookEdit:bookEdit,public bsModalRef: BsModalRef) {
     this.bookModal=bookEdit.book

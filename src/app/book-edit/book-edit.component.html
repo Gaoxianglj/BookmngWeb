@@ -120,9 +120,9 @@
               </td>
             </tr>
           </table>
-          <div class="alert alert-danger mt-2" *ngIf="errorMessage != null">
-            {{ errorMessage }}
-          </div>
+    <div class="alert alert-danger" *ngIf="errorMessage != 'null'">
+      {{ errorMessage }}
+    </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-primary btn-sm pl-3 pr-3" (click)="
@@ -141,7 +141,6 @@
             删除
           </button>
         </div>
-
 
   </div>
 </div>

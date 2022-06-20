@@ -15,7 +15,7 @@ import {LoginService} from "../login/login.service";
 })
 export class EditUserComponent implements OnInit {
  public user!:User;
- public errorMessage!: string;
+ public errorMessage='null';
   public userName='';
 
   public password='';
@@ -75,11 +75,13 @@ this.service.editUser(this.userName, this.password, this.password2, this.email, 
         this.errorMessage = result.errors[0]?.message || '获取用户失败';
         console.log("获取用户失败");
       } else {
+
         const user: User = result.result;
+        console.log("成功登录"+user.userId)
         localStorage.setItem('user', JSON.stringify(user));
       }
     });
-    location.reload()
+    this.close()
   }else {
     this.errorMessage = result.errors[0]?.message || '保存失败';
   }
